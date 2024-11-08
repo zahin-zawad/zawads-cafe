@@ -1,9 +1,14 @@
 import React from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import {motion} from 'framer-motion'
+import { Dispatch, SetStateAction } from 'react';
 
+interface NavBarProps {
+  sidebar: boolean;
+  setSidebar: Dispatch<SetStateAction<boolean>>;
+}
 
-export default function NavBar() {
+export default function NavBar({ sidebar, setSidebar }: NavBarProps) {
   return (
     <nav className='absolute top-0 left-0 w-full pt-10 text-white z-20'>
         <div className="container">
@@ -30,6 +35,7 @@ export default function NavBar() {
                     damping: 10,
                     delay: .2,
                 }}
+                onClick={() => setSidebar(!sidebar)}
                 >
                     <GiHamburgerMenu className='text-3xl cursor-pointer'/>
                 </motion.div>

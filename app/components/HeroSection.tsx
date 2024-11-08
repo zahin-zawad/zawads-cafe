@@ -1,10 +1,11 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import BgImage from '@/public/Images/HeroSectionImages/bg-slate.png'
 import CoffeeMug from '@/public/Images/HeroSectionImages/black.png'
 import NavBar from './NavBar'
 import {motion} from 'framer-motion'
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 const bgImage = {
     backgroundImage: `url(${BgImage.src})`,
@@ -14,12 +15,14 @@ const bgImage = {
 }
 
 export default function HeroSection() {
+
+    const [sidebar, setSidebar] = useState<boolean>(false);
   return (
     <main style={bgImage}>
         <section className='min-h-[750px] w-full'>
             <div className="container">
                 {/* navbar section */}
-                <NavBar/>
+                <NavBar sidebar={sidebar} setSidebar={setSidebar}/>
                 {/* Hero section */}
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]'>
 
@@ -113,6 +116,36 @@ export default function HeroSection() {
                     <div></div>
                 </div>
             </div>
+            {/* sidebar menu section  */}
+            {
+                sidebar && (
+                    <motion.div
+                    initial={{x: "100%"}} 
+                    whileInView={{x: 0}}
+                    className='absolute top-0 right-0 w-36 h-full bg-gradient-to-b from-primary/80 to-primaryDark/80 backdrop-blur-sm z-10 '>
+            <div className='h-full w-full flex justify-center items-center '>
+                <div className='flex flex-col justify-center items-center gap-6 text-white'>
+                    {/* line  */}
+                    <div className='h-[70px] w-[1px] bg-white'></div>
+
+                    <div className='inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-slate-500'>
+                        <FaFacebookF className='text-2xl'/>
+                    </div>
+                    <div className='inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-slate-500'>
+                        <FaTwitter className='text-2xl'/>
+                    </div>
+                    <div className='inline-block p-2 rounded-full cursor-pointer border border-white hover:bg-slate-500'>
+                        <FaInstagram className='text-2xl'/>
+                    </div>
+
+
+                    <div className='h-[70px] w-[1px] bg-white'></div>
+                </div>
+                </div>
+            </motion.div>
+                )
+            }
+
         </section>
 
     </main>
