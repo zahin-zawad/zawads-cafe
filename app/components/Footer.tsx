@@ -23,7 +23,7 @@ export default function Footer() {
                     delay: .5,
                 }} 
                 className='space-y-6'>
-                    <h1 className='text-3xl font-bold uppercase'>Zawad's Cafe</h1>
+                    <h1 className='text-3xl font-bold uppercase'>Zawad&apos;s Cafe</h1>
                     <p className='text-sm max-w-72'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ea ratione quidem libero, praesentium ab atque? Quidem maxime, numquam dolores</p>
                     <div>
                         <p className='flex items-center gap-2 mt-2'>

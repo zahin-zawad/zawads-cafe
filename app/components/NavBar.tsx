@@ -23,7 +23,7 @@ export default function NavBar({ sidebar, setSidebar }: NavBarProps) {
                     damping: 10,
                     delay: .2,
                 }}
-                 className='text-2xl font-semibold uppercase'><span className='text-primary'>Zawad's</span> Cafe</motion.h1>
+                 className='text-2xl font-semibold uppercase'><span className='text-primary'>Zawad&apos;s</span> Cafe</motion.h1>
 
                 {/* hamburger menu */}
                 <motion.div
